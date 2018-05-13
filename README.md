@@ -1,23 +1,28 @@
-## 1.vue.js란?
+## 1.Vue.js란?
 
-> VueVue(/vjuː/ 로 발음, view 와 발음이 같습니다.).js 는 **프론트엔드 자바스크립트 프레임워크**입니다.  
+> Vue(/vjuː/ 로 발음, view 와 발음이 같습니다.).js 는 **프론트엔드 자바스크립트 프레임워크**입니다.
 >
-> Angular, Backbone, React 에 비하여 <u>매우 작고 가벼우며, 복잡도도 낮습니다. 사용하기에 매우 간편하고, 시작하기도 쉽습니다. 이름이 그러하듯, 마치 React 처럼 **뷰** 에만 초점을 두기 때문에 다른 라이브러리와 프레임워크와 혼용하기도 쉽습니다.</u> 외국의 한 개발자가 이렇게 말하더군요. Vue.js 는 마치, 프로젝트에서 jQuery를 사용 하는 것 처럼 쉽게 적용을 할 수 있는데, jQuery 에 비해서 **훨씬 **기능이 많고 강력하다고.
->
-> Angular 나 React는 뭔가 프로젝트를 시작하는게, 스타터킷을 사용하면 꽤 쉽긴 하지만, 처음 시작하는 단계에서 뭔가 프로젝트를 설정하는 과정이 조금은 복잡합니다. CDN으로 불러와서 사용하는게, 가능하긴 하지만, 그렇게 했을땐 좀 불편해서 주로 webpack 을 사용해서 프로젝트를 구성하고 Babel 을 사용하거나, Typescript 를 사용을 해야하기도 하죠.
+> 진입 장벽이 낮고, 유연하고, 성능이 우수하고, 유지 보수와 테스팅이 편리한 자바스크립트 프레임워크입니다. 뷰는 또한 점진적인 프레임워크를 지향합니다. 이는 웹 애플리케이션 전체를 프레임워크로 구조화하지 않아도 웹 애플리케이션의 작은 부분에만 적용하여 특정 화면에 더 나은 사용자 경험을 제공할 수 있는 걸 의미해요.
 >
 > Vue.js 의 경우엔 CDN 으로 불러와서 사용하기도 매우 간편하고, 원한다면 webpack 으로도 구성을 할 수 있습니다. 이 프레임워크의 엄청난 장점 중 하나는, 매뉴얼이 타 프레임워크 / 라이브러리에 비해서 **한글화**가 엄청 잘 되어있습니다. 정리도 아주 잘 되어있구요. 따라서 한국 개발자들이 새로 시작하기에 참 좋은 환경이라고 생각합니다. 
 
+
+
 - [Vue.js 한국 사용자 모임](http://vuejs.kr/)
+
+
 - [한국어가이드](https://kr.vuejs.org/v2/guide/installation.html) 
 - [한국어 번역 프로젝트 목록](http://vuejs.kr/translated-in-korean/)
+- [Vue.js API](https://kr.vuejs.org/v2/api/#search-form) 
 - [크롬 브라우저에서 Vue 앱 디버깅하기](http://vuejs.kr/vue/2017/02/25/vue-chrome-debugging/)
 
 
 
 ### 호환성 정보
 
-Vue는 ECMAScript 5 기능을 사용하기 때문에 IE8 이하 버전을 **지원하지 않습니다.** 하지만 모든 [ECMAScript 5 호환 브라우저](http://caniuse.com/#feat=es5)를 지원합니다
+Vue는 ECMAScript 5 기능을 사용하기 때문에 IE8 이하 버전을 **지원하지 않습니다.** 
+
+하지만 모든 [ECMAScript 5 호환 브라우저](http://caniuse.com/#feat=es5)를 지원합니다
 
 
 
@@ -42,6 +47,8 @@ Vue는 ECMAScript 5 기능을 사용하기 때문에 IE8 이하 버전을 **지�
 ### **2.1.2 성능의 차이**
 
 [메뉴얼](https://kr.vuejs.org/v2/guide/comparison.html#%EC%84%B1%EB%8A%A5-%EB%B6%84%EC%84%9D)에 따르면 모든 시나리오에서 Vue 가 React 보다 우수한 성능을 발휘한다고 합니다.  10000 개의 컴포넌트를 100 번 렌더링하는 React 프로젝트와 Vue 프로젝트를 비교 했을 때 다음과 같은 결과가 나왔다고 하네요.
+
+![성능비교](https://velopert.com/wp-content/uploads/2017/01/Screenshot-from-2017-01-21-13-52-46.png)
 
 추가적으로, 리액트에서는 불필요한 업데이트를 방지할때는 `shouldComponentUpdate` 라는 메소드를 통해서 최적화를 하죠. Vue 에서는 컴포넌트의 종속성이 렌더링 중 자동으로 추적되어 시스템에서 다시 렌더링 해야하는 컴포넌트를 정확히 알고 있기 때문에 이 작업이 불필요 합니다.
 
@@ -113,6 +120,8 @@ Vue.js는 클라이언트 측 애플리케이션을 위한 프레임워크입니
 [참고 : 클라이언트 사이드 렌더링 VS 서버 사이드 렌더링](http://asfirstalways.tistory.com/244) 
 
 [Angular 2 대신에 Vue.js를 선택한 이유 (그리고 React를 선택하지 않은 이유)](https://joshua1988.github.io/web-development/translation/why-we-moved-from-angular2-to-vuejs/)
+
+[다른프레임워크와비교](https://kr.vuejs.org/v2/guide/comparison.html)
 
 
 
@@ -295,3 +304,66 @@ vm.$watch('a', function (newVal, oldVal) {
 
 ## 4.예제
 
+뷰를 아직 사용 안 해보신 분들을 위해 뷰로 코딩하는 느낌이 어떤 건지 보여드리려고 합니다. 그리고 문법도 간단히 한번 살펴볼께요. 정말 자세한 내용은 다루지 않을 겁니다. 다만, 뷰의 주요 컨셉이 어떤 건지 알아볼게요.
+
+대부분의 자바스크립트처럼 우리도 페이지에 데이터를 표시하는 것으로 시작해보겠습니다. 
+
+```html
+<div id="app">
+  <h2>
+    X are in stock.
+  </h2>
+</div>
+
+<script>
+  var product = "Boots"
+</script>
+```
+
+![데이터 집어넣기](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/4_insert-data-onpage.gif)
+
+위 그림처럼 뷰로 ‘Boots’라는 데이터를 ‘X’에 넣고 싶으면 아래와 같이 구현합니다. ![vue.js 인스턴스로 표현하기](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/5_vue-instance.gif)
+
+위에서 보시는 것처럼 뷰 라이브러리를 불러와서 뷰 인스턴스를 생성하고, ‘app’이라는 화면 요소에 연결하였습니다. 여기서 `el`은 인스턴스가 뿌려질 화면 요소를 의미합니다. 그리고 `data` 안에 표시하고 싶은 값을 정의하여 화면에 }}로 연결했죠.
+
+위 코드를 동작시키면 아래와 같이 나옵니다. ![vue.js 인스턴스 결과화면](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/6_first-result.gif)
+
+여기서 특별한 건 없어요. 다만 데이터가 변할 때 뷰의 마법이 시작됩니다. 제가 이제 개발자 도구의 콘솔 창으로 가서 product의 값을 변경해볼게요. 어떤 일이 일어나는지 보세요. ![콘솔에서 데이터 변경](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/7_first-result-with-console.gif)
+
+뷰는 리액티브(Reactive)합니다. 이 말은 웹 페이지 상에 표시된 데이터가 변할 때 뷰에서 다 알아서 그 변경을 처리하는 것을 의미합니다. 이 동작은 문자열뿐만 아니라 모든 유형의 데이터에 모두 적용됩니다. 어디 한번 문자열 대신에 배열을 넣어볼까요? 그리고 HTML은 아이템 목록을 나타낼 수 있게 ul 태그로 바꿨습니다. product의 개수만큼 li 태그를 생성하려면 v-for라는 특별한 속성을 사용합니다. 이렇게 하면 데이터의 개수만큼 li 태그가 찍혀져 나오죠. ![v-for 디렉티브](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/8_v-for-directive-usage.png)
+
+이제 브라우저로 가서 코드를 실행하면 아래와 같습니다. ![v-for 디렉티브 결과](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/9_v-for-directive-result.gif)
+
+아직 코드가 살짝 부자연스럽네요. 어디 빈 배열로 시작해서 데이터를 불러와 담아볼까요? 불러올 데이터는 데이터베이스에서 가져온다고 가정합시다. ![API로 가져온 데이터 목록 표시하기](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/10_v-for-directive-with-apis.gif)
+
+위 코드가 실행된 결과는 아래와 같습니다. ![vue.js 결과 화면](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/11_v-for-directive-with-apis-result.gif)
+
+보시는 것처럼 현재 목록의 각 아이템은 데이터를 받아온 객체를 표시합니다. 좀 더 사용자가 보기 편하게 데이터 표현 방식을 아래와 같이 바꿔봅니다. ![vue.js의 데이터 표현방식](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/12_v-for-expression.gif)
+
+그럼 결과는.. ![vue.js 결과화면](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/13_v-for-exp-result.gif)
+
+각 아이템 중에 혹시 개수(quantity)가 0인게 있으면 사용자가 인지할 수 있도록 조금 다르게 표시해볼까요? span 태그로 `item.quantity === 0` 일 때만 OUT OF STOCK 텍스트가 나타나게 하겠습니다. 여기서 이 조건을 위해 v-if 디렉티브를 사용합니다. ![v-if 디렉티브 사용](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/14_v-for-another.gif)
+
+아이템 중에 jacket의 재고가 다 떨어졌었네요. 아래와 같이 말이죠. ![v-if 디렉티브 vue.js 결과화면](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/15_v-if-directive-result.gif)
+
+만약 모든 상품(product)의 총 재고량을 목록 아래에 표시하려면 어떻게 해야 할까요? totalProducts라는 computed 속성을 활용하면 됩니다. 만약 자바스크립트 reduce() API가 익숙하지 않으시다면 여기서는 그냥 각 상품의 재고의 총합을 구하는 동작이라고 생각하세요. ![vue.js의 computed 속성](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/16_computed-prop.gif)
+
+아래에서 볼 수 있듯이 이제 모든 상품의 총 재고량이 표시됩니다. ![vue.js의 computed 속성 결과 화면](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/17_computed-prop-result.gif)
+
+자 이제 뷰 개발자 도구(Vue.js Chrome Extension)을 알아보기 좋은 시간이네요. 개발자 도구의 장점 중 하나는 페이지 상에 표시된 데이터를 살펴볼 수 있다는 점입니다. ![vue.js 개발자 도구](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/18_vue-devtool.gif)
+
+뷰의 반응성(Reactivity: 데이터가 변함에 따라 뷰에서 반사적으로 화면을 변화시키는 특성)을 다시 살펴볼까요. 아이템 2개를 제거해보겠습니다. 아래 보시는 것처럼 상품 목록뿐만 아니라 남은 상품의 총 재고량도 바뀌네요.
+
+![vue.js 반응성 reactivity](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/19_vue-reactivity.gif)
+
+다음으로, 버튼을 이용해서 페이지에 이벤트를 추가해보겠습니다. 각 상품 아이템에 Add라는 버튼을 추가합니다. 그리고 버튼을 클릭했을 때 각 상품의 재고량을 1개씩 늘리겠습니다. ![vue.js 버튼 클릭 이벤트 v-on](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/20_v-on-click.gif)
+
+아래를 보시면 각 상품의 Add 버튼을 클릭했을 때 각 상품의 재고와 총 재고량 숫자가 올라갑니다. 그리고 Jacket 상품의 Add 버튼을 클릭하면 OUT OF STOCK이라는 글씨도 사라지네요. ![vue.js v-on 디렉티브 결과 화면](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/21_v-on-click-result.gif)
+
+허나 여기서 만약 각 상품의 재고량을 그냥 수기로 입력하고 싶으면 어떻게 해야 할까요? 인풋 박스를 하나 만들고 v-model 디렉티브를 연결해봅니다. 그리고 입력되는 값은 항상 숫자라고 지정할게요. ![vue.js v-model 디렉티브](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/22_v-model.gif)
+
+이제 모든 아이템의 재고 숫자를 직접 입력하여 변경할 수 있습니다. 만약 0을 입력하면 자연스럽게 OUT OF STOCK이 함께 표시되네요. 그리고 아까 추가했던 Add 버튼도 정상적으로 동작합니다. ![vue.js v-model 디렉티브 결과 화면](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/23_v-model-result.gif)
+
+여기까지 살펴본 코드는 [JSFIDDLE](https://jsfiddle.net/greggpollack/gr1cs2tv/)에서 살펴볼 수 있습니다.
+
+[참고 주소](https://joshua1988.github.io/web-development/translation/why-43percent-devs-wanna-learn-vuejs/)
