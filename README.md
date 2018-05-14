@@ -16,8 +16,6 @@
 - [Vue.js API](https://kr.vuejs.org/v2/api/#search-form) 
 - [크롬 브라우저에서 Vue 앱 디버깅하기](http://vuejs.kr/vue/2017/02/25/vue-chrome-debugging/)
 
-
-
 ### 호환성 정보
 
 Vue는 ECMAScript 5 기능을 사용하기 때문에 IE8 이하 버전을 **지원하지 않습니다.** 
@@ -41,8 +39,6 @@ Vue는 ECMAScript 5 기능을 사용하기 때문에 IE8 이하 버전을 **지�
 - 가상 DOM 을 사용합니다
 - 컴포넌트를 제공합니다
 - 뷰에만 집중을 하고 있고, 라우터, 상태관리를 위해선 써드파티 라이브러리를 사용합니다.
-
-
 
 ### **2.1.2 성능의 차이**
 
@@ -191,6 +187,17 @@ var app2 = new Vue({
 var vm = new Vue({
   // 옵션
 })
+
+---------------------------------------
+    
+var vm = new Vue({
+  template: ...,
+  el: ...,
+  methods: {
+
+  },
+  // ...
+})
 ```
 
 엄격히 [MVVM 패턴](https://en.wikipedia.org/wiki/Model_View_ViewModel)과 관련이 없지만 Vue의 디자인은 부분적으로 그것에 영감을 받았습니다. 컨벤션으로, Vue 인스턴스를 참조하기 위해 종종 변수 `vm`(ViewModel의 약자)을 사용합니다.
@@ -322,31 +329,174 @@ vm.$watch('a', function (newVal, oldVal) {
 
 ![데이터 집어넣기](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/4_insert-data-onpage.gif)
 
-위 그림처럼 뷰로 ‘Boots’라는 데이터를 ‘X’에 넣고 싶으면 아래와 같이 구현합니다. ![vue.js 인스턴스로 표현하기](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/5_vue-instance.gif)
+위 그림처럼 뷰로 ‘Boots’라는 데이터를 ‘X’에 넣고 싶으면 아래와 같이 구현합니다.
+
+```html
+<div id="app">
+  <h2>
+    {{ product }} is in stock.
+  </h2>
+</div>
+<script src="https://unpkg.com/vue"></script>
+<script>
+  var app = new Vue({
+    el:"#app",
+    data:{
+      product : "Boots"
+    }
+  })
+</script>
+```
+
+ ![vue.js 인스턴스로 표현하기](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/5_vue-instance.gif)
+
+
 
 위에서 보시는 것처럼 뷰 라이브러리를 불러와서 뷰 인스턴스를 생성하고, ‘app’이라는 화면 요소에 연결하였습니다. 여기서 `el`은 인스턴스가 뿌려질 화면 요소를 의미합니다. 그리고 `data` 안에 표시하고 싶은 값을 정의하여 화면에 }}로 연결했죠.
 
 위 코드를 동작시키면 아래와 같이 나옵니다. ![vue.js 인스턴스 결과화면](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/6_first-result.gif)
 
-여기서 특별한 건 없어요. 다만 데이터가 변할 때 뷰의 마법이 시작됩니다. 제가 이제 개발자 도구의 콘솔 창으로 가서 product의 값을 변경해볼게요. 어떤 일이 일어나는지 보세요. ![콘솔에서 데이터 변경](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/7_first-result-with-console.gif)
+여기서 특별한 건 없어요. 다만 데이터가 변할 때 뷰의 마법이 시작됩니다. 제가 이제 개발자 도구의 콘솔 창으로 가서 product의 값을 변경해볼게요. 어떤 일이 일어나는지 보세요. 
 
-뷰는 리액티브(Reactive)합니다. 이 말은 웹 페이지 상에 표시된 데이터가 변할 때 뷰에서 다 알아서 그 변경을 처리하는 것을 의미합니다. 이 동작은 문자열뿐만 아니라 모든 유형의 데이터에 모두 적용됩니다. 어디 한번 문자열 대신에 배열을 넣어볼까요? 그리고 HTML은 아이템 목록을 나타낼 수 있게 ul 태그로 바꿨습니다. product의 개수만큼 li 태그를 생성하려면 v-for라는 특별한 속성을 사용합니다. 이렇게 하면 데이터의 개수만큼 li 태그가 찍혀져 나오죠. ![v-for 디렉티브](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/8_v-for-directive-usage.png)
+![콘솔에서 데이터 변경](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/7_first-result-with-console.gif)
+
+
+
+
+
+뷰는 리액티브(Reactive)합니다. 이 말은 웹 페이지 상에 표시된 데이터가 변할 때 뷰에서 다 알아서 그 변경을 처리하는 것을 의미합니다. 이 동작은 문자열뿐만 아니라 모든 유형의 데이터에 모두 적용됩니다. 어디 한번 문자열 대신에 배열을 넣어볼까요? 그리고 HTML은 아이템 목록을 나타낼 수 있게 ul 태그로 바꿨습니다. product의 개수만큼 li 태그를 생성하려면 v-for라는 특별한 속성을 사용합니다. 이렇게 하면 데이터의 개수만큼 li 태그가 찍혀져 나오죠. 
+
+```html
+ <div id="app">
+  <ul>
+    <li v-for="product in products">
+    {{ product }}
+    </li>
+  </ul>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script>
+  var app = new Vue({
+    el:'#app',
+    data:{
+      products:[
+      'Boots',
+      'Jacket',
+      'Hiking Socks'
+      ]
+    }
+  })
+</script>
+```
+
+
+
+![v-for 디렉티브](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/8_v-for-directive-usage.png)
 
 이제 브라우저로 가서 코드를 실행하면 아래와 같습니다. ![v-for 디렉티브 결과](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/9_v-for-directive-result.gif)
 
-아직 코드가 살짝 부자연스럽네요. 어디 빈 배열로 시작해서 데이터를 불러와 담아볼까요? 불러올 데이터는 데이터베이스에서 가져온다고 가정합시다. ![API로 가져온 데이터 목록 표시하기](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/10_v-for-directive-with-apis.gif)
+아직 코드가 살짝 부자연스럽네요. 어디 빈 배열로 시작해서 데이터를 불러와 담아볼까요? 불러올 데이터는 데이터베이스에서 가져온다고 가정합시다. 
+
+```html
+<script>
+  var app = new Vue({
+    el:'#app',
+    data:{
+      products:[]
+    },
+    created(){
+      fetch('https://api.myjson.com/bins/74l63')
+      .then(response => response.json())
+        .then(json => {
+        this.products = json.products
+      })
+    }
+  })
+</script>
+```
+
+![API로 가져온 데이터 목록 표시하기](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/10_v-for-directive-with-apis.gif)
 
 위 코드가 실행된 결과는 아래와 같습니다. ![vue.js 결과 화면](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/11_v-for-directive-with-apis-result.gif)
 
-보시는 것처럼 현재 목록의 각 아이템은 데이터를 받아온 객체를 표시합니다. 좀 더 사용자가 보기 편하게 데이터 표현 방식을 아래와 같이 바꿔봅니다. ![vue.js의 데이터 표현방식](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/12_v-for-expression.gif)
+보시는 것처럼 현재 목록의 각 아이템은 데이터를 받아온 객체를 표시합니다. 좀 더 사용자가 보기 편하게 데이터 표현 방식을 아래와 같이 바꿔봅니다. 
+
+```html
+<div id="app">
+	<ul>
+    	<li v-for="product in products">
+      	{{product.quantity}} {{product.name}} 	
+      </li>  
+  	</ul>
+</div>
+```
+
+![vue.js의 데이터 표현방식](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/12_v-for-expression.gif)h
 
 그럼 결과는.. ![vue.js 결과화면](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/13_v-for-exp-result.gif)
 
-각 아이템 중에 혹시 개수(quantity)가 0인게 있으면 사용자가 인지할 수 있도록 조금 다르게 표시해볼까요? span 태그로 `item.quantity === 0` 일 때만 OUT OF STOCK 텍스트가 나타나게 하겠습니다. 여기서 이 조건을 위해 v-if 디렉티브를 사용합니다. ![v-if 디렉티브 사용](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/14_v-for-another.gif)
+각 아이템 중에 혹시 개수(quantity)가 0인게 있으면 사용자가 인지할 수 있도록 조금 다르게 표시해볼까요? span 태그로 `item.quantity === 0` 일 때만 OUT OF STOCK 텍스트가 나타나게 하겠습니다. 여기서 이 조건을 위해 v-if 디렉티브를 사용합니다. 
+
+```html
+<div id="app">
+	<ul>
+    	<li v-for="product in products">
+      	{{product.quantity}} {{product.name}} 	
+          <span v-if="product.quantity === 0">
+          	- OUT OF STOCK
+          </span>
+      </li>  
+  	</ul>
+</div>
+```
+
+![v-if 디렉티브 사용](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/14_v-for-another.gif)
 
 아이템 중에 jacket의 재고가 다 떨어졌었네요. 아래와 같이 말이죠. ![v-if 디렉티브 vue.js 결과화면](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/15_v-if-directive-result.gif)
 
-만약 모든 상품(product)의 총 재고량을 목록 아래에 표시하려면 어떻게 해야 할까요? totalProducts라는 computed 속성을 활용하면 됩니다. 만약 자바스크립트 reduce() API가 익숙하지 않으시다면 여기서는 그냥 각 상품의 재고의 총합을 구하는 동작이라고 생각하세요. ![vue.js의 computed 속성](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/16_computed-prop.gif)
+만약 모든 상품(product)의 총 재고량을 목록 아래에 표시하려면 어떻게 해야 할까요? totalProducts라는 computed 속성을 활용하면 됩니다. 만약 자바스크립트 reduce() API가 익숙하지 않으시다면 여기서는 그냥 각 상품의 재고의 총합을 구하는 동작이라고 생각하세요. 
+
+```html
+<div id="app">
+	<ul>
+    	<li v-for="product in products">
+      	{{product.quantity}} {{product.name}} 	
+          <span v-if="product.quantity === 0">
+          	- OUT OF STOCK
+          </span>
+      </li>  
+  	</ul>
+  <h2>
+    TOtal Inventory : {{ totalProducts }}
+  </h2>
+</div>
+
+<script>
+var app = new Vue({
+    el:'#app',
+    data:{
+      products:[]
+    },
+   computed :{
+    totalProducts(){
+      return this.products.reduce((sum,product) => {
+        return sum + product.quantity
+      },0)
+    }
+  },
+  created(){
+      fetch('https://api.myjson.com/bins/74l63')
+      .then(response => response.json())
+        .then(json => {
+        this.products = json.products
+      })
+    }
+  })
+</script>
+```
+
+![vue.js의 computed 속성](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/16_computed-prop.gif)
 
 아래에서 볼 수 있듯이 이제 모든 상품의 총 재고량이 표시됩니다. ![vue.js의 computed 속성 결과 화면](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/17_computed-prop-result.gif)
 
@@ -356,11 +506,104 @@ vm.$watch('a', function (newVal, oldVal) {
 
 ![vue.js 반응성 reactivity](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/19_vue-reactivity.gif)
 
-다음으로, 버튼을 이용해서 페이지에 이벤트를 추가해보겠습니다. 각 상품 아이템에 Add라는 버튼을 추가합니다. 그리고 버튼을 클릭했을 때 각 상품의 재고량을 1개씩 늘리겠습니다. ![vue.js 버튼 클릭 이벤트 v-on](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/20_v-on-click.gif)
+다음으로, 버튼을 이용해서 페이지에 이벤트를 추가해보겠습니다. 각 상품 아이템에 Add라는 버튼을 추가합니다. 그리고 버튼을 클릭했을 때 각 상품의 재고량을 1개씩 늘리겠습니다.
+
+ 
+
+```html
+<div id="app">
+	<ul>
+    	<li v-for="product in products">
+      	{{product.quantity}} {{product.name}} 	
+          <span v-if="product.quantity === 0">
+          	- OUT OF STOCK
+          </span>
+          <button @click="product.quantity += 1">
+            Add
+          </button>
+      </li>  
+  	</ul>
+  <h2>
+    TOtal Inventory : {{ totalProducts }}
+  </h2>
+</div>
+
+<script>
+var app = new Vue({
+    el:'#app',
+    data:{
+      products:[]
+    },
+   computed :{
+    totalProducts(){
+      return this.products.reduce((sum,product) => {
+        return sum + product.quantity
+      },0)
+    }
+  },
+  created(){
+      fetch('https://api.myjson.com/bins/74l63')
+      .then(response => response.json())
+        .then(json => {
+        this.products = json.products
+      })
+    }
+  })
+</script>
+```
+
+![vue.js 버튼 클릭 이벤트 v-on](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/20_v-on-click.gif)
 
 아래를 보시면 각 상품의 Add 버튼을 클릭했을 때 각 상품의 재고와 총 재고량 숫자가 올라갑니다. 그리고 Jacket 상품의 Add 버튼을 클릭하면 OUT OF STOCK이라는 글씨도 사라지네요. ![vue.js v-on 디렉티브 결과 화면](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/21_v-on-click-result.gif)
 
-허나 여기서 만약 각 상품의 재고량을 그냥 수기로 입력하고 싶으면 어떻게 해야 할까요? 인풋 박스를 하나 만들고 v-model 디렉티브를 연결해봅니다. 그리고 입력되는 값은 항상 숫자라고 지정할게요. ![vue.js v-model 디렉티브](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/22_v-model.gif)
+허나 여기서 만약 각 상품의 재고량을 그냥 수기로 입력하고 싶으면 어떻게 해야 할까요? 인풋 박스를 하나 만들고 v-model 디렉티브를 연결해봅니다. 그리고 입력되는 값은 항상 숫자라고 지정할게요.
+
+ 
+
+```html
+<div id="app">
+	<ul>
+    	<li v-for="product in products">
+          <input type="number" v-model.number="product.quantity">
+      	{{product.quantity}} {{product.name}} 	
+          <span v-if="product.quantity === 0">
+          	- OUT OF STOCK
+          </span>
+          <button @click="product.quantity += 1">
+            Add
+          </button>
+      </li>  
+  	</ul>
+  <h2>
+    TOtal Inventory : {{ totalProducts }}
+  </h2>
+</div>
+
+<script>
+var app = new Vue({
+    el:'#app',
+    data:{
+      products:[]
+    },
+   computed :{
+    totalProducts(){
+      return this.products.reduce((sum,product) => {
+        return sum + product.quantity
+      },0)
+    }
+  },
+  created(){
+      fetch('https://api.myjson.com/bins/74l63')
+      .then(response => response.json())
+        .then(json => {
+        this.products = json.products
+      })
+    }
+  })
+</script>
+```
+
+![vue.js v-model 디렉티브](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/22_v-model.gif)
 
 이제 모든 아이템의 재고 숫자를 직접 입력하여 변경할 수 있습니다. 만약 0을 입력하면 자연스럽게 OUT OF STOCK이 함께 표시되네요. 그리고 아까 추가했던 Add 버튼도 정상적으로 동작합니다. ![vue.js v-model 디렉티브 결과 화면](https://joshua1988.github.io/images/posts/web/translation/why-43percent-devs-wanna-learn-vuejs/23_v-model-result.gif)
 
