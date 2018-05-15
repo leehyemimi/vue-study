@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>JS Bin</title>
+</head>
+<body>
+<div id="app">
+	<ul>
+		<li v-for="product in products">
+			<input type="number" v-model.number="product.quantity">
+			{{product.quantity}} {{product.name}}
+			<span v-if="product.quantity === 0">
+          	- OUT OF STOCK
+          </span>
+			<button @click="product.quantity += 1">
+				Add
+			</button>
+		</li>
+	</ul>
+	<h2>
+		TOtal Inventory : {{ totalProducts }}
+	</h2>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="ui.js"></script>
+</body>
+</html>
