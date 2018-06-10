@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+		<div id="app">
+			<header>
+				<h3>{{ massage }}</h3>
+			</header>
+			<todo-footer></todo-footer>
+			<todo-list></todo-list>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script>
+			Vue.component('todo-footer',{
+				template : '<p>풋터</p>'
+			})
+
+
+			var cmp = {
+				template : '<p>전역</p>'
+			}
+			
+			new Vue({
+				el : '#app',
+				data : {
+					massage : '안녕'
+				},
+				components :{
+					'todo-list' : cmp
+				}
+			})
+			
+			
+			
+		</script>
+	</body>
+</html>
