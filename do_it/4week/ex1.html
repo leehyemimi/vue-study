@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+				<c-component v-bind:propsdata="message + anotermessage"></c-component>
+				<sibling-component v-bind:propsdata="anotermessage"></sibling-component>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script>
+			Vue.component('c-component',{
+				props : ['propsdata'],
+				template : '<p>{{ propsdata }}</p>'
+			})
+
+			Vue.component('sibling-component',{
+				props : ['propsdata'],
+				template : '<p>{{ propsdata }}</p>'
+			})
+
+			var app = new Vue({
+				el : "#app",
+				data : {
+					message : 'hello',
+					anotermessage : 'hi'
+				}
+			})
+		</script>
+	</body>
+</html>
