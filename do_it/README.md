@@ -16,8 +16,8 @@
 
 **2week**  **(6월 11일)** `이초이`
 
-- 3-2장, 뷰 컴포넌트
-- 3-3장, 뷰 컴포넌트 통신 <br><br>
+- [3-2장, 뷰 컴포넌트](https://github.com/Cho-i/Vue/blob/master/2week/index.md)
+- [3-3장, 뷰 컴포넌트 통신](https://github.com/Cho-i/Vue/blob/master/2week/index.md) <br><br>
 
 **3week**  **(6월 18일)** `심설송`
 
