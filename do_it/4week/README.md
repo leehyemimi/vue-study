@@ -146,13 +146,13 @@ props 검증이 실패하면 Vue는 콘솔에서 경고를 출력합니다(개�
 
 사용자 정의 이벤트는 `v-model` 에서 작동하는 사용자 정의 입력을 만드는데에도 사용할 수 있습니다. 기억하세요.
 
-```
+```html
 <input v-model="something">
 ```
 
 위 문장은 아래와 같습니다.
 
-```
+```html
 <input
   v-bind:value="something"
   v-on:input="something = $event.target.value">
@@ -160,7 +160,7 @@ props 검증이 실패하면 Vue는 콘솔에서 경고를 출력합니다(개�
 
 컴포넌트와 함께 사용하면 다음과 같이 간단해집니다.
 
-```
+```html
 <custom-input
   :value="something"
   @input="value => { something = value }">
@@ -174,9 +174,17 @@ props 검증이 실패하면 Vue는 콘솔에서 경고를 출력합니다(개�
 
 매우 간단한 통화 입력을 사용하는 모습을 보겠습니다.
 
-```
+```html
 <currency-input v-model="price"></currency-input>
 ```
+
+
+
+[폼 입력 바인딩](https://kr.vuejs.org/v2/guide/forms.html)
+
+[v-model](https://kr.vuejs.org/v2/api/#v-model)
+
+
 
 
 
