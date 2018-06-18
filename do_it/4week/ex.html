@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	</head>
+	<body>
+	<ol>
+		<li>버튼 두개를 만들고,</li>
+		<li>버튼 클릭시 1씩 증가하고,</li>
+		<li>증가한 번호 총합</li>
+	</ol>
+		<div id="app">
+			<p>{{ total }}</p>
+			<button-counter v-on:in-btn="inCounterTotal"></button-counter>
+			<button-counter v-on:in-btn="inCounterTotal"></button-counter>
+		</div>
+		<script>
+			Vue.component('button-counter',{
+				template : '<button v-on:click="inCounter">{{ counter }}</button>',
+				data:function(){
+					return{
+						counter : 0
+					}
+				},
+				methods :{
+					inCounter : function(){
+						this.counter += 1
+						this.$emit('in-btn');
+					}
+				}
+			});
+
+			new Vue({
+				el : '#app',
+				data :{
+					total : 0
+				},
+				methods :{
+					inCounterTotal : function(){
+						this.total += 1
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
