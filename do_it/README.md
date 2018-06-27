@@ -23,7 +23,7 @@
 
 - [뷰 컴포넌트 심화](https://github.com/songxue77/vue_study/blob/master/vue_component.md)
 
-- [jsfiddle<](https://jsfiddle.net/sognxue77/tfdyxbpa/18/)br>
+- [jsfiddle](https://jsfiddle.net/sognxue77/tfdyxbpa/18/) <br>
 
   <br>
 
