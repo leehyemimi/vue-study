@@ -5,7 +5,7 @@
 1. ES5에서 뷰 인스턴스의 template 속성을 활용하는 방법
 
 ```html
-<script>
+<script> 
   new Vue({
     template:'<p>hello {{ message }}</p>'
   })
