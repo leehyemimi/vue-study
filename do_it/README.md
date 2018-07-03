@@ -34,7 +34,7 @@
 
 **5week**  **(7월 2일)** `이동규`
 
-- 5-1장, 뷰 템플릿<br><br>
+- [5-1장, 뷰 템플릿](https://github.com/LoadedDK/vuejs/tree/master/05)<br><br>
 
 **6week**  **(7월 9일)** `김지혜`
 
