@@ -38,7 +38,7 @@
 
 **6week**  **(7월 9일)** `김지혜`
 
-- 5-2장,  뷰 프로젝트 구성 방법<br><br>
+- [5-2장,  뷰 프로젝트 구성 방법](https://github.com/jewdri-kim/vue.js/blob/master/CH05/05-2%20%EB%B7%B0%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B5%AC%EC%84%B1%EB%B0%A9%EB%B2%95.md)<br><br>
 
 ------
 
