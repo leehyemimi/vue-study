@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/ui.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/do_it/todo_list/src/App.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/do_it/todo_list/src/components/TodoFooter.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/do_it/todo_list/src/components/TodoHeader.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/do_it/todo_list/src/components/TodoInput.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/do_it/todo_list/src/components/TodoList.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/do_it/todo_list/src/components/common/Modal.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/do_it/todo_list/src/components/common/TodoInput.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/do_it/todolist/src/App.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/do_it/todolist/src/components/TotoFooter.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/do_it/todolist/src/components/TotoHeader.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/do_it/todolist/src/components/TotoInput.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/do_it/todolist/src/components/TotoList.vue" charset="UTF-8" />
   </component>
 </project>
