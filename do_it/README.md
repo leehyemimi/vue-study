@@ -67,10 +67,10 @@
 
 **9week**  **(7월 30일)**  `박찬국`
 
-- 7-1장, 뷰 중·고급 레벨로 올라가기 위한 지식
-- 7-2장, 뷰 개발을 위한 웹팩<br><br>
+- [7-1장, 뷰 중·고급 레벨로 올라가기 위한 지식](https://github.com/changook/vuejs-study/tree/master/week10)
+- [7-2장, 뷰 개발을 위한 웹팩](https://github.com/changook/vuejs-study/tree/master/week10)<br><br>
 
-**10week**  **(8월 6일)**  `전범준`
+**10week**  **(8월 6일)**  `발표자`
 
 - 7-3장, 뷰 개발을 위한 ES6
 - 7-4장, 뷰 CLI에서 사용하는 NPM<br><br>
