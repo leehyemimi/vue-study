@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> v-model</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+
+<body>
+    <!-- View -->
+    <div id="simple">
+        <input type="text" v-model="name" placeholder="이름을 입력하세요">
+        <br> 입력된 이름 :
+        <h2 v-html="name"></h2>
+    </div>
+
+    <div id="simple1">
+        좋아하는 과일을 모두 골라주세요
+        <br>
+        <input type="checkbox" value="1" v-model="fruits"> 사과,
+        <input type="checkbox" value="2" v-model="fruits"> 키위,
+        <input type="checkbox" value="3" v-model="fruits"> 포도,
+        <input type="checkbox" value="4" v-model="fruits"> 수박,
+        <input type="checkbox" value="5" v-model="fruits"> 참외,
+    </div>
+    <div id="simple2">
+        선택한 과일들 : <span v-html="fruits"></span>
+    </div>
+
+    <script type="text/javascript">
+        var model = {
+            fruits: []
+        }
+
+        var simple1 = new Vue({
+            el: "#simple1",
+            data: model
+        })
+
+        var simple2 = new Vue({
+            el: "#simple2",
+            data: model
+        })
+
+        var twoway = new Vue({
+            el: "#simple",
+            data: {
+                name: ''
+            }
+        })
+    </script>
+</body>
+
+</html>
