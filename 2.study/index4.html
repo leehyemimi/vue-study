@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue-if/vue-for / 조건문과 반복문</title>
+     <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">{{msg}}</div>
+    <script>
+        new Vue({
+            el : '#app',
+            data :{
+                msg : 'hello!!'
+            }
+        })
+    </script>
+
+    <div id="app1">
+        <p v-if="seen">이제나를 볼수있어요</p>
+    </div>
+    <script>
+        const app1 = new Vue({
+            el : '#app1',
+            data : {
+                seen : true
+            }
+        })
+    </script>
+     <div id="app1_1">
+        <p v-if="message">
+            {{ message }} ~~
+        </p>
+    </div>
+    <script>
+        const app1_1 = new Vue({
+            el : '#app1_1',
+            data : {
+                show : false,
+                message: '' //빈 문제 데이터는 false로 읽혀짐 그래서 v-if 사용할때 응용가능
+            }
+        })
+    </script>
+
+
+    <div id="app2">
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+    </div>
+    <script>
+        const app2 =  new Vue({
+            el: '#app2',
+            data : {
+                todos:[
+                    {text:'1'},
+                    {text:'2'},
+                    {text:'3'}
+                ]
+            }
+        })
+    </script>
+
+<div id="app2_1">
+    <ul>
+       <li v-for="item in items" v-bind:key="item.id">
+           {{ item.message }}
+       </li>
+    </ul>
+</div>
+<script>
+    const app2_1 =  new Vue({
+        el: '#app2_1',
+        data : {
+            items:[
+                {
+                    id : 1,
+                    message : 'lee'
+                },
+                {
+                    id : 2,
+                    message : 'hye'
+                },
+                {
+                    id : 3,
+                    message : 'won'
+                }
+            ]
+        }
+    })
+</script>
+
+</body>
+</html>
