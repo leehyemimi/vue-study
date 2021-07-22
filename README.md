@@ -8,13 +8,13 @@
 
 
 
-- [Vue.js 한국 사용자 모임](http://vuejs.kr/)
+- [Vue.js 한국 사용자 모임](https://vuejs-kr.github.io/)
 
 
 - [한국어가이드](https://kr.vuejs.org/v2/guide/installation.html) 
-- [한국어 번역 프로젝트 목록](http://vuejs.kr/translated-in-korean/)
+- [한국어 번역 프로젝트 목록](https://vuejs-kr.github.io/translated-in-korean/)
 - [Vue.js API](https://kr.vuejs.org/v2/api/#search-form) 
-- [크롬 브라우저에서 Vue 앱 디버깅하기](http://vuejs.kr/vue/2017/02/25/vue-chrome-debugging/)
+
 
 ### 호환성 정보
 
